@@ -17,6 +17,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function (){
 
+   $links = [
+      'links' => [
+         [
+            'text' => 'Home',
+            'url' => '/'
+         ],
+         [
+            'text' => 'About',
+            'url' => '/about'
+         ],
+         [
+            'text' => 'Contact',
+            'url' => '/contact'
+         ]
+      ]
+   ];
+
    $data = [
       'categories' => [
           [
@@ -34,7 +51,7 @@ Route::get('/', function (){
       ]
   ];
 
-    return view('home', $data);
+    return view('home', $data, $links);
 })->name('home');
 
 
